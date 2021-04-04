@@ -4,3 +4,17 @@
 // Например для первой категории получится:
 // Категория: Животные
 // Количество элементов: 4
+
+
+const elements = document.querySelectorAll('.item');
+console.log(`В списке ${elements.length} категории.`);
+
+elements.forEach(el => {
+    const title = el.firstElementChild.textContent;
+    const quantityCategories = el.lastElementChild.children.length;
+    // console.log(title)
+    // console.log(quantityCategories)
+    return console.log(`Категория: ${title}, 
+Количество элементов: ${quantityCategories}`)
+}
+)
