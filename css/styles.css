@@ -1,0 +1,24 @@
+/* BASE */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* TASK-3 */
+.gallery__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+}
+
+.gallery__img {
+  display: block;
+  width: 350px;
+  height: 230px;
+  border-radius: 4px;
+}
