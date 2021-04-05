@@ -41,5 +41,14 @@ function createBoxes(amount) {
     refs.boxesContainer.append(...boxes);
     console.log(refs.boxesContainer)
 }
-console.log(createBoxes(4))
+createBoxes(5)
 
+function onRenderBtnClick() {
+    
+}
+
+function onDestroyBtnClick() {
+    refs.boxesContainer.innerHTML = '';
+}
+// refs.renderBtn.addEventListener('click', onRenderBtnClick);
+refs.destroyBtn.addEventListener('click', onDestroyBtnClick);
