@@ -30,25 +30,31 @@ function createBoxes(amount) {
     
     for (let i = 1; i <= amount; i++) {
         const box = document.createElement('div');
-                box.style.width = `${boxSize}px`;
-                box.style.height = `${boxSize}px`;
-                box.style.backgroundColor = colorRandomizer();
-                box.style.margin = '10px';
-                boxSize += 10;
+        box.style.width = `${boxSize}px`;
+        box.style.height = `${boxSize}px`;
+        box.style.backgroundColor = colorRandomizer();
+        box.style.margin = '10px';
+        box.style.border = '3px solid'
+        box.style.borderRadius = '4px';
+        box.style.borderColor = colorRandomizer();
+
+        boxSize += 10;
          boxes.push(box)
         // console.log(boxes)
     }
+    
     refs.boxesContainer.append(...boxes);
     console.log(refs.boxesContainer)
 }
-createBoxes(5)
+// createBoxes(5)
 
 function onRenderBtnClick() {
-    
+    refs.boxesContainer.innerHTML = '';
+    createBoxes(refs.input.value);
 }
 
 function onDestroyBtnClick() {
     refs.boxesContainer.innerHTML = '';
 }
-// refs.renderBtn.addEventListener('click', onRenderBtnClick);
+refs.renderBtn.addEventListener('click', onRenderBtnClick);
 refs.destroyBtn.addEventListener('click', onDestroyBtnClick);
