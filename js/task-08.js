@@ -1,13 +1,12 @@
 // Напиши скрипт создания и очистки коллекции элементов. 
-// Пользователь вводит количество элементов в input и нажимает кнопку
-// Создать, после чего рендерится коллекция .При нажатии на кнопку Очистить,
-// коллекция элементов очищается.
+// Пользователь вводит количество элементов в input и нажимает кнопку Создать, 
+// после чего рендерится коллекция.
+// При нажатии на кнопку Очистить, коллекция элементов очищается.
 
 // Создай функцию createBoxes(amount), которая принимает 1 параметр amount - число. 
 // Функция создает столько div, сколько указано в amount и добавляет их в div#boxes.
 
 // Каждый созданный div:
-
 // Имеет случайный rgb цвет фона
 // Размеры самого первого div - 30px на 30px
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
@@ -22,14 +21,25 @@ const refs = {
 
 function createBoxes(amount) {
     const boxes = [];
+    let boxSize = 30;
+    const colorRandomizer = () => {
+        return `rgb(${Math.floor(Math.random() * 255)}, 
+                    ${Math.floor(Math.random() * 255)}, 
+                    ${Math.floor(Math.random() * 255)})`
+    }
+    
     for (let i = 1; i <= amount; i++) {
         const box = document.createElement('div');
-        boxes.push(box)
+                box.style.width = `${boxSize}px`;
+                box.style.height = `${boxSize}px`;
+                box.style.backgroundColor = colorRandomizer();
+                box.style.margin = '10px';
+                boxSize += 10;
+         boxes.push(box)
         // console.log(boxes)
     }
     refs.boxesContainer.append(...boxes);
-    // console.log(refs.boxesContainer)
-
+    console.log(refs.boxesContainer)
 }
-// console.log(createBoxes(4))
+console.log(createBoxes(4))
 
