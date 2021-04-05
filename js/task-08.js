@@ -1,6 +1,10 @@
-// Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит количество элементов в input и нажимает кнопку Создать, после чего рендерится коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.
+// Напиши скрипт создания и очистки коллекции элементов. 
+// Пользователь вводит количество элементов в input и нажимает кнопку
+// Создать, после чего рендерится коллекция .При нажатии на кнопку Очистить,
+// коллекция элементов очищается.
 
-// Создай функцию createBoxes(amount), которая принимает 1 параметр amount - число. Функция создает столько div, сколько указано в amount и добавляет их в div#boxes.
+// Создай функцию createBoxes(amount), которая принимает 1 параметр amount - число. 
+// Функция создает столько div, сколько указано в amount и добавляет их в div#boxes.
 
 // Каждый созданный div:
 
@@ -8,3 +12,24 @@
 // Размеры самого первого div - 30px на 30px
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes.
+
+const refs = {
+    input: document.querySelector('#controls > input'),
+    renderBtn: document.querySelector('button[data-action="render"]'),
+    destroyBtn: document.querySelector('button[data-action="destroy"]'),
+    boxesContainer: document.querySelector('#boxes'),
+}
+
+function createBoxes(amount) {
+    const boxes = [];
+    for (let i = 1; i <= amount; i++) {
+        const box = document.createElement('div');
+        boxes.push(box)
+        // console.log(boxes)
+    }
+    refs.boxesContainer.append(...boxes);
+    // console.log(refs.boxesContainer)
+
+}
+// console.log(createBoxes(4))
+
