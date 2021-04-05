@@ -18,4 +18,4 @@ function onInputValidation () {
 }
 input.addEventListener('blur', onInputValidation);
 
-console.log(input.dataset.length)
+// console.log(input.dataset.length)

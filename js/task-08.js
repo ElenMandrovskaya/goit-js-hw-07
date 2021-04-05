@@ -44,7 +44,7 @@ function createBoxes(amount) {
     }
     
     refs.boxesContainer.append(...boxes);
-    console.log(refs.boxesContainer)
+    // console.log(refs.boxesContainer)
 }
 // createBoxes(5)
 

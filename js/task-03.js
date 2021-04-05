@@ -38,6 +38,6 @@ const string = images.map(galleryItemMarkUp).join('');
 galleryList.insertAdjacentHTML("beforeend", string);
 
 
-console.log(galleryList);
+// console.log(galleryList);
 
 
